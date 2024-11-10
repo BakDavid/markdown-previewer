@@ -1,50 +1,82 @@
-# React + TypeScript + Vite
+# Markdown Previewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple **Markdown Previewer** built using **React** and **Vite**, inspired by [freeCodeCamp’s Markdown Previewer](https://markdown-previewer.freecodecamp.rocks/).
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Markdown Previewer allows users to type in GitHub-flavored Markdown into a text area and see the rendered HTML instantly. The app uses `marked.js` for Markdown parsing.
 
-## Expanding the ESLint configuration
+### Live Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Check the app live [here](https://bakdavid.github.io/markdown-previewer/).
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+-   Supports GitHub-flavored Markdown.
+-   Parses and renders elements like headings, lists, images, links, code, and blockquotes.
+-   Instant preview of the Markdown text.
+-   Customizable CSS for styling.
+
+## User Stories
+
+The project meets the following user stories:
+
+1. Text area with `id="editor"` to type Markdown.
+2. Preview area with `id="preview"` to display HTML.
+3. Instant updating of the preview on typing.
+4. Default Markdown includes headings, links, lists, images, and more.
+5. Uses the `marked` library for Markdown parsing.
+
+## Built With
+
+-   [React](https://reactjs.org/) - UI framework.
+-   [Vite](https://vitejs.dev/) - Development and build tool.
+-   [Marked.js](https://marked.js.org/) - Markdown parser.
+-   [GitHub Pages](https://pages.github.com/) - For hosting.
+
+## Installation
+
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+
+```
+git clone https://github.com/bakdavid/markdown-previewer.git
+cd markdown-previewer
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+npm install
+```
+
+3. Run the development server:
+
+```
+npm run dev
+```
+
+4. Open `http://localhost:5173/` in your browser to view the app.
+
+## Deploying to GitHub Pages
+
+This project is set up for GitHub Pages deployment:
+
+1. Build the project:
+
+```
+npm run build
+```
+
+2. Deploy to GitHub Pages:
+
+```
+npm run deploy
+```
+
+The app will be available at `https://bakdavid.github.io/markdown-previewer/`.
+
+## License
+
+This project is licensed under the MIT License.
